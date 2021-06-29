@@ -1,0 +1,37 @@
+[
+  {
+    "content": "Great post!!",
+    "user_id": 5,
+    "post_id": 1
+  },
+  {
+    "content": "Does it actually works??",
+    "user_id": 4,
+    "post_id": 1
+  },
+  {
+    "content": "What do you mean?!",
+    "user_id": 3,
+    "post_id": 3
+  },
+  {
+    "content": "I don´t agree",
+    "user_id": 2,
+    "post_id": 3
+  },
+  {
+    "content": "Maybe....",
+    "user_id": 1,
+    "post_id": 2
+  },
+  {
+    "content": "BS",
+    "user_id": 5,
+    "post_id": 5
+  },
+  {
+    "content": "Lol",
+    "user_id": 4,
+    "post_id": 6
+  }
+]

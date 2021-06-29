@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Sequelize",
+    "content": "Sequelize is a promise-based Node.js ORM for Postgres, MySQL, MariaDB, SQLite and Microsoft SQL Server. It features solid transaction support, relations, eager and lazy loading, read replication and more.",
+    "user_id": 1
+  },
+  {
+    "title": "Express",
+    "content": "Express is a minimal and flexible Node.js web application framework that provides a robust set of features to develop web and mobile applications. It facilitates the rapid development of Node based Web applications.",
+    "user_id": 2
+  },
+  {
+    "title": "BCRYPT",
+    "content": "The bcrypt hashing function allows us to build a password security platform that scales with computation power and always hashes every password with a salt.",
+    "user_id": 3
+  },
+  {
+    "title": "npm",
+    "content": "npm is the package manager for the Node JavaScript platform. It puts modules in place so that node can find them, and manages dependency conflicts intelligently. Most commonly, it is used to publish, discover, install, and develop node programs.",
+    "user_id": 4
+  },
+  {
+    "title": "node.js",
+    "content": "Node.js is a JavaScript runtime environment. Sounds great, but what does that mean? How does that work?",
+    "user_id": 5
+  },
+  {
+    "title": "jQuery",
+    "content": "jQuery is a lightweight, 'write less, do more', JavaScript library. The purpose of jQuery is to make it much easier to use JavaScript on your website.",
+    "user_id": 1
+  }
+]
