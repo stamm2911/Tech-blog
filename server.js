@@ -38,12 +38,13 @@ const hbs = exphbs.create({ helpers });
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-// Telling Express to use the routes 
-app.use(routes);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Telling Express to use the routes. ¡¡¡¡ THIS LINE MUST BE AFTER "app.use(express.json())" !!!!! It will tell express to accept HTTPS POST & PUT in json format
+app.use(routes);
 
 // Initializing the server
 sequelize.sync({ force: false }).then(() => {
