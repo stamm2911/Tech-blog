@@ -8,8 +8,8 @@ router.get("/login", (req, res) => {
     res.redirect("/");
   } else {
     try {
-      res.status(200).send("LOGIN");
-      // res.render('login');
+      // res.status(200).send("LOGIN");
+      res.render('signIn');
     } catch (err) {
       res.status(400).json(err);
     }
@@ -22,8 +22,8 @@ router.get("/signup", (req, res) => {
     res.redirect("/");
   } else {
     try {
-      res.status(200).send("SIGN UP");
-      // res.render('signup');
+      // res.status(200).send("SIGN UP");
+      res.render('signUp');
     } catch (err) {
       res.status(400).json(err);
     }
@@ -64,7 +64,7 @@ router.get("/", async (req, res) => {
       ],
     });
     const PostData = dbPostData.map((post) => post.get({ plain: true }));
-    // res.status(201).json(PostData);
+    // res.status(200).json(PostData);
     res.render('home',{PostData});
   } catch (err) {
     res.status(404).json(err);
@@ -87,8 +87,8 @@ router.get("/dashboard", async (req, res) => {
       const dashboardData = dbdashboardData.map((title) =>
         title.get({ plain: true })
       );
-      res.status(200).json(dashboardData);
-      // res.render('dashboard',{dashboardData});
+      // res.status(200).json(dashboardData);
+      res.render('dashboard',{dashboardData});
     } catch (err) {
       res.status(400).json;
     }
