@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const { count } = require("../../models/Comment");
 const Comment = require("../../models/Comment");
 const Post_Comment = require("../../models/Post_Comment");
 
