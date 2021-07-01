@@ -1,1 +1,75 @@
-<h1 style="color: yellow;";">Sign Up</h1>
+<div style="border-radius: 25px;" class="container">
+  <form id="sign-up-form" class="p-4">
+    <h2>Create an account:</h2>
+    <div class="mb-3">
+      <label for="exampleInputName" class="form-label">User name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="exampleInputName"
+        aria-describedby="emailHelp"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+      />
+      <div id="emailHelp" style="color:black" class="">We'll never share your email with anyone
+        else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputConfPassword1" class="form-label">Confirm Password</label>
+      <input type="password" class="form-control" id="exampleInputConfPassword1" />
+    </div>
+    <button type="submit" class="btn btn-danger">Sign up</button>
+  </form>
+</div>
+
+<script>
+  console.log('initialized') 
+  const signUpForm = document.getElementById('sign-up-form');
+  const userName = document.getElementById('exampleInputName');
+  const userEmail = document.getElementById('exampleInputEmail1');
+  const userPassword = document.getElementById('exampleInputPassword1');
+  const userPasswordConf = document.getElementById('exampleInputConfPassword1');
+
+  signUpForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    console.log(userPassword.value.length)
+    if(userName.value && userEmail.value && userPassword.value){
+        if(userPassword.value.length < 8){
+            alert('Password must be at least 8 characters long!')
+        } else {
+            if(userPassword.value == userPasswordConf.value){
+                const userData = {
+                    name: userName.value,
+                    email: userEmail.value,
+                    password: userPassword.value
+                }
+                const response = await fetch('/api/user/', {
+                    method: 'POST',
+                    body: JSON.stringify(userData),
+                    headers: {'Content-Type':'application/json'}
+                });
+                if (response.ok) {
+                    document.location.replace('/');
+                } else {
+                    alert('An account with this email is already in use!');
+                }
+            }else{
+                alert('Passwords do not match!');
+            }
+        }
+    } else {
+        alert('All fields are required!')
+    }
+  });
+</script>

@@ -27,7 +27,7 @@ router.post("/", async (req, res) => {
 // --------------------- SIGN IN ---------------------
 router.post("/login", async (req, res) => {
   try {
-    console.log(req.body);
+    console.log('req.body',req.body);
     const dbUserData = await User.findOne({
       where: {
         email: req.body.email,
@@ -63,7 +63,7 @@ router.post("/login", async (req, res) => {
       });
     });
   } catch (err) {
-    res.status(400).json(err);
+    res.status(401).json(err);
   }
 });
 

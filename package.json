@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js",
-    "seed": "node seeds/seed.js"
+    "seed": "node seeds/seed.js",
+    "build-css": "tailwindcss build src/styles.css -o public/css/styles.css"
   },
   "author": "stamm2911",
   "license": "ISC",
@@ -19,6 +20,7 @@
     "express-session": "^1.17.2",
     "mysql2": "^2.2.5",
     "nodemon": "^2.0.7",
-    "sequelize": "^6.6.4"
+    "sequelize": "^6.6.4",
+    "tailwindcss": "^2.2.4"
   }
 }

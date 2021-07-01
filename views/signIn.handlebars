@@ -1,1 +1,52 @@
-<h1 style="color: blue;";">Sign in</h1>
+<div class="container">
+  <form id="sign-in-form" class="p-4">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+      />
+      <div id="emailHelp" style="color:black" class="">We'll never share your email with anyone
+        else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" />
+    </div>
+    <button type="submit" class="btn btn-danger">Sign in</button>
+    <hr style="height:2px;border-width:0;;background-color:rgb(0, 0, 0)" />
+    <div class="mb-3">
+        <label class="form-check-label" for="exampleCheck1">Don't have an account?<a
+            style="color:black"
+            href="/signup"
+        > Sign up</a></label>
+    </div>
+  </form>
+</div>
+
+<script>
+  console.log('initialized')
+  const emailInput = document.getElementById('exampleInputEmail1');
+  const password = document.getElementById('exampleInputPassword1');
+  const signInForm = document.getElementById('sign-in-form');
+  signInForm.addEventListener('submit', async (e) => { 
+    e.preventDefault();
+    const signInObj = {
+        email: emailInput.value,
+        password: password.value,
+    }
+    const response = await fetch('/api/user/login', {
+        method: 'POST',
+        body: JSON.stringify(signInObj),
+        headers: {'Content-Type':'application/json'}
+    });
+    
+    if (response.ok) {
+        document.location.replace('/');
+    } else {
+        alert('Failed to log in.');
+    }
+  }) 
+</script>
