@@ -1,39 +1,37 @@
-
-body{
+body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   /* background-image: linear-gradient(to top, rgb(48, 48, 48), rgb(133, 133, 133)); */
-  background-image: url('tech-backgroung4.jpg');
-  
+  background-image: url("tech-backgroung4.jpg");
 }
 
-header{
-  font-family: 'Bungee Shade', cursive;
+header {
+  font-family: "Bungee Shade", cursive;
   display: flex;
   flex-direction: column;
   align-items: center;
   background: radial-gradient(circle, rgb(238, 44, 44), rgb(104, 2, 2));
   /* background-image: linear-gradient(to top, rgb(155, 0, 0), rgb(255, 64, 64)); */
-  height:250px;
-  box-shadow: 0px 6px 9px  rgb(168, 1, 1);
+  height: 250px;
+  box-shadow: 0px 6px 9px rgb(168, 1, 1);
 }
 
-h1{
+h1 {
   /* background-color: red; */
   font-size: 70px;
   color: black;
   margin: 0;
 }
 
-header a{
+header a {
   /* background-color: blue; */
   color: black;
   font-size: 32px;
   margin: 9vw;
-  text-decoration:  none;
+  text-decoration: none;
 }
 
-header a:hover{
+header a:hover {
   color: black;
   text-decoration: none;
   font-size: 38px;
@@ -41,15 +39,16 @@ header a:hover{
   /* margin: 0; */
 }
 
-nav{
+nav {
   /* background-color: blue;
   height: 150px; */
 }
 
-main{
+main {
   /* background-color: green; */
   color: rgb(255, 255, 255);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   /* align-items: center; */
   padding-top: 60px;
@@ -58,9 +57,84 @@ main{
   width: 100%;
 }
 
-.container{
-  background-color: rgb(92, 92, 92);
+.container {
+  background-color: rgb(92, 92, 92, 0.9);
   border-radius: 25px;
   width: max-content;
   height: max-content;
+}
+
+article {
+  background-color: rgb(131, 131, 131, 0.8);
+  width: 50%;
+  height: fit-content;
+  border-radius: 25px;
+  align-self: center;
+  margin-bottom: 50px;
+  /* padding: 10px; */
+}
+
+.post-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background: radial-gradient(circle, rgb(238, 44, 44, 0.7), rgb(104, 2, 2, 0.7));
+  border-radius: 25px 25px 0px 0px;
+}
+
+.post-body {
+  background-image: linear-gradient(to top, rgb(32, 32, 32), rgb(70, 70, 70));
+  border-radius: 25px;
+  padding: 20px;
+  margin: 10px;
+}
+
+.comment-container{
+  /* background-color: hotpink; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.comment-body {
+  display:flex;
+  flex-direction: column;
+  width: fit-content;
+  background-image: linear-gradient(to top, rgb(32, 32, 32), rgb(70, 70, 70));
+  border-radius: 25px;
+  padding: 20px;
+  margin: 10px;
+}
+
+h2 {
+  padding: 15px;
+}
+
+i {
+  /* background-color: hotpink; */
+  margin-top: 10px;
+  margin-right: 40px;
+  font-size: 250%;
+}
+
+cite {
+  align-self: flex-end;
+  font-size: 80%;
+}
+
+hr {
+  margin: 20px 20px 0 20px ;
+}
+
+time {
+  padding: 10px;
+  margin-right: 0;
+}
+
+#comment-input{
+  /* background-color: hotpink; */
+  border-radius: 25px;
+  margin: 10px;
+  height: 30px;
+  width: 80%;
 }
