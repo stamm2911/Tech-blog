@@ -60,6 +60,10 @@ router.get("/", async (req, res) => {
             },
           ],
         },
+        {
+          model: User,
+          attributes: ['name']
+        }
       ],
     });
     const PostData = dbPostData.map((post) => post.get({ plain: true }));

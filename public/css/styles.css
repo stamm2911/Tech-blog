@@ -131,7 +131,7 @@ time {
   margin-right: 0;
 }
 
-#comment-input{
+.comment-input{
   /* background-color: hotpink; */
   border-radius: 25px;
   margin: 10px;
