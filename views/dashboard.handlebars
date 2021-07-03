@@ -1,1 +1,18 @@
-<h1 style="color: red;";">This is your dashboard</h1>
+<div id="my-posts-container">
+  <aside id="my-profile">
+    <h1>Profile</h1>
+    <p>Name: {{userData.name}}</p>
+    <p>Email: {{userData.email}}</p>
+  </aside>
+  <aside id="add-post">
+    <i class="fas fa-plus-circle"></i>
+  </aside>
+  <section id="my-posts">
+    {{#each dashboardData as |titles|}}
+      <article class="my-post-title">
+        <h2>{{titles.title}}</h2>
+        <cite>Post on 30/12/2021</cite>
+      </article>
+    {{/each}}
+  </section>
+</div>

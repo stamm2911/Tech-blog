@@ -8,7 +8,7 @@ router.get("/login", (req, res) => {
   } else {
     try {
       // res.status(200).send("LOGIN");
-      res.render('signIn');
+      res.render("signIn");
     } catch (err) {
       res.status(400).json(err);
     }
@@ -22,7 +22,7 @@ router.get("/signup", (req, res) => {
   } else {
     try {
       // res.status(200).send("SIGN UP");
-      res.render('signUp');
+      res.render("signUp");
     } catch (err) {
       res.status(400).json(err);
     }
@@ -62,13 +62,13 @@ router.get("/", async (req, res) => {
         },
         {
           model: User,
-          attributes: ['name']
-        }
+          attributes: ["name"],
+        },
       ],
     });
     const PostData = dbPostData.map((post) => post.get({ plain: true }));
     // res.status(200).json(PostData);
-    res.render('home',{PostData, loggedIn: req.session.loggedIn});
+    res.render("home", { PostData, loggedIn: req.session.loggedIn });
   } catch (err) {
     res.status(404).json(err);
   }
@@ -90,8 +90,10 @@ router.get("/dashboard", async (req, res) => {
       const dashboardData = dbdashboardData.map((title) =>
         title.get({ plain: true })
       );
+      const dbUserData = await User.findByPk(req.session.userId)
+      const userData = dbUserData.get({plain:true})
       // res.status(200).json(dashboardData);
-      res.render('dashboard',{dashboardData, loggedIn: req.session.loggedIn});
+      res.render('dashboard',{dashboardData, userData, loggedIn: req.session.loggedIn});
     } catch (err) {
       res.status(400).json;
     }

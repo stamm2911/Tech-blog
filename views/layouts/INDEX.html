@@ -25,7 +25,7 @@
   </head>
   <body>
     <header>
-      <h1>Tech Blog</h1>
+      <h1>Tech Blog TEST!!!!!</h1>
       <div>
         <a href="/">Home</a>
       </div>
@@ -38,76 +38,34 @@
     </header>
     <main>
       <!-- --------------------------------------------------------------------- -->
-      <article>
-        <div class="post-title">
-          <h2>Post title</h2>
-          <time>Posted by: Lalo on 5/07/2021</time>
-        </div>
-        <section class="post-body">
-          Rick and Morty Rick and Morty Rick and Morty Rick and Morty Rick and
-          Morty Rick and Morty Rick and Morty Rick and Morty Rick and Morty Rick
-          and Morty Rick and Morty Rick and Morty Rick and Morty Rick and Morty
-          Rick and Morty Rick and Morty Rick and Morty Rick and Morty Rick and
-          Morty Rick and Morty Rick and Morty Rick and Morty Rick and Morty Rick
-          and Morty
+      <div id="my-posts-container">
+        <aside id="my-profile">
+          <h1>Profile</h1>
+          <p>Name: Lalo</p>
+          <p>Email: edstamm29@gmail.com</p>
+        </aside>
+        <aside id="add-post">
+          <i class="fas fa-plus-circle"></i>
+        </aside>
+        <section id="my-posts">
+          <!-- ------------------------------------------------------------------- -->
+          <article class="my-post-title">
+            <h2>Title</h2>
+            <cite>Post on 30/12/2021</cite>
+          </article>
+          <!-- ------------------------------------------------------------------- -->
         </section>
-        <hr style="height: 3px; border-width: 0; background-color: rgb(0, 0, 0)"/>
-        <section class="comment-container">
-          <div>
-            <!-- ----------- -->
-            <div class="comment-body">
-              <p>Rick and Morty Rick and Morty Rick and Morty Rick and Morty</p>
-              <cite>-Daia, 30/11/2021</cite>
-            </div>
-            <!-- ----------- -->
-          </div>
-          <i class="fas fa-comments"></i>
-        </section>
-        <from id="comment-form">
-          <input id ="comment-input" type="text" placeholder="Write a comment...">
-        </from>        
-      </article>
-      <!-- --------------------------------------------------------------------- -->
-      <!-- --------------------------------------------------------------------- -->
-      <article>
-        <div class="post-title">
-          <h2>Post title</h2>
-          <time>Posted by: Lalo on 5/07/2021</time>
-        </div>
-        <section class="post-body">
-          Rick and Morty Rick and Morty Rick and Morty Rick and Morty Rick and
-          Morty Rick and Morty Rick and Morty Rick and Morty Rick and Morty Rick
-          and Morty Rick and Morty Rick and Morty Rick and Morty Rick and Morty
-          Rick and Morty Rick and Morty Rick and Morty Rick and Morty Rick and
-          Morty Rick and Morty Rick and Morty Rick and Morty Rick and Morty Rick
-          and Morty
-        </section>
-        <hr style="height: 3px; border-width: 0; background-color: rgb(0, 0, 0)"/>
-        <section class="comment-container">
-          <div>
-            <!-- ----------- -->
-            <div class="comment-body">
-              <p>Rick and Morty Rick and Morty Rick and Morty Rick and Morty</p>
-              <cite>-Daia, 30/11/2021</cite>
-            </div>
-            <!-- ----------- -->
-          </div>
-          <i class="fas fa-comments"></i>
-        </section>
-        <from id="comment-form">
-          <input id ="comment-input" type="text" placeholder="Write a comment...">
-        </from>        
-      </article>
+      </div>
       <!-- --------------------------------------------------------------------- -->
     </main>
   </body>
   <script>
-    const Comm = document.getElementById('comment-input');
-    Comm.addEventListener('keypress', (e)=>{
-      if (e.key === 'Enter') {
-      // code for enter
-      document.location.replace('/');
-    }
-    })
+    const Comm = document.getElementById("comment-input");
+    Comm.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        // code for enter
+        document.location.replace("/");
+      }
+    });
   </script>
 </html>
