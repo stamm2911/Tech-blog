@@ -1,0 +1,62 @@
+<article>
+  <div class="post-title">
+    <h2>Create a post</h2>
+  </div>
+  <form>
+    <label>Title:</label>
+    <br />
+    <input
+      id="new-post-title"
+      class="comment-input"
+      type="text"
+      placeholder="Write a title..."
+    />
+    <br />
+    <label>Content:</label>
+    <br />
+    <textarea
+      id="new-post-content"
+      class="comment-input"
+      type="text"
+    ></textarea>
+    <br />
+  </form>
+  <div id="new-post-container">
+    <button id="new-post-form" class="new-post-btn btn btn-danger btn-lg">
+      Submit
+    </button>
+    <button id="cl-new-post" class="new-post-btn btn btn-danger btn-lg">
+      Cancel
+    </button>
+  </div>
+</article>
+
+<script>
+    const clNewPost = document.getElementById('cl-new-post');
+    const newPostForm = document.getElementById('new-post-form');
+    const newPostContent = document.getElementById('new-post-content');
+    const newPostTitle = document.getElementById('new-post-title');
+
+    clNewPost.addEventListener('click',(e)=>{
+      document.location.replace('/dashboard')
+    })
+
+    newPostForm.addEventListener('click', async (e) => {
+      const newPostObj = {
+        title: newPostTitle.value,
+        content: newPostContent.value
+      }
+      console.log(JSON.stringify(newPostObj))
+      const response = await fetch('/api/post',{
+        method: 'POST',
+        body: JSON.stringify(newPostObj),
+        headers: {'Content-Type':'application/json'}
+      })
+      if(response.ok){
+        document.location.replace('/dashboard');
+      } else {
+        alert('Failed to post!')
+      }
+
+    })
+  </script>

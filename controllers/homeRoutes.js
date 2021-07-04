@@ -90,12 +90,46 @@ router.get("/dashboard", async (req, res) => {
       const dashboardData = dbdashboardData.map((title) =>
         title.get({ plain: true })
       );
-      const dbUserData = await User.findByPk(req.session.userId)
-      const userData = dbUserData.get({plain:true})
+      const dbUserData = await User.findByPk(req.session.userId);
+      const userData = dbUserData.get({ plain: true });
       // res.status(200).json(dashboardData);
-      res.render('dashboard',{dashboardData, userData, loggedIn: req.session.loggedIn});
+      res.render("dashboard", {
+        dashboardData,
+        userData,
+        loggedIn: req.session.loggedIn,
+      });
     } catch (err) {
       res.status(400).json;
+    }
+  }
+});
+
+// --------------------- NEW POST ---------------------
+router.get("/newpost", (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect("/login");
+  } else {
+    try {
+      // res.status(200).json({message:'ok'})
+      res.render('newPost',{loggedIn: req.session.loggedIn})
+    } catch (err) {
+      res.status(401).json(err);
+    }
+  }
+});
+
+// --------------------- EDIT POST ---------------------
+router.get("/editpost/:id", async (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect("/login");
+  } else {
+    try {
+      console.log(req.params.id)
+      const dbPostData = await Post.findByPk(req.params.id)
+      const PostData = dbPostData.get({plain:true})     
+      res.render('editPost',{PostData, loggedIn: req.session.loggedIn})
+    } catch (err) {
+      res.status(401).json(err);
     }
   }
 });

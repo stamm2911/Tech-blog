@@ -1,25 +1,25 @@
 {{#each PostData as |post|}}
     <article>
-    <div class="post-title">
-        <h2>{{post.title}}</h2>
-        <time>Posted by: {{post.user.name}} on 5/07/2021</time>
-    </div>
-    <section class="post-body">
-        {{post.content}}
-    </section>
-    <hr style="height: 3px; border-width: 0; background-color: rgb(0, 0, 0)" />
-    <section class="comment-container">
-        <div>
-            {{#each post.post_comments as |comment|}}
-                {{> comment-template}}
-            {{/each}}
+        <div class="post-title">
+            <h2>{{post.title}}</h2>
+            <time>Posted by: {{post.user.name}} on 5/07/2021</time>
         </div>
-        <i class="fas fa-comments"></i>
-    </section>
-    <form data-postid="{{post.id}}">
-        <input class="comment-input" type="text" placeholder="Write a comment..." />
-        <input type="submit" class="btn btn-danger" value="Comment"/>
-    </form>
+        <section class="post-body">
+            {{post.content}}
+        </section>
+        <hr style="height: 3px; border-width: 0; background-color: rgb(0, 0, 0)" />
+        <section class="comment-container">
+            <div>
+                {{#each post.post_comments as |comment|}}
+                    {{> comment-template}}
+                {{/each}}
+            </div>
+            <i class="fas fa-comments"></i>
+        </section>
+        <form data-postid="{{post.id}}">
+            <input class="comment-input" type="text" placeholder="Write a comment..." />
+            <input type="submit" class="btn btn-danger" value="Comment"/>
+        </form>
     </article>
 {{/each}}
 
