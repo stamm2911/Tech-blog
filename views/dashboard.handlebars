@@ -10,8 +10,8 @@
   <section id="my-posts">
     {{#each dashboardData as |titles|}}
       <article data-postid="{{titles.id}}" class="my-post-title">
-        <h2>{{titles.title}}</h2>
-        <cite>Post on {{format_date titles.updatedAt}}</cite>
+        <h2 data-postid="{{titles.id}}">{{titles.title}}</h2>
+        <cite data-postid="{{titles.id}}">Post on {{format_date titles.updatedAt}}</cite>
       </article>
     {{/each}}
   </section>
