@@ -2,7 +2,7 @@
     <article>
         <div class="post-title">
             <h2>{{post.title}}</h2>
-            <time>Posted by: {{post.user.name}} on 5/07/2021</time>
+            <time>Posted by: {{post.user.name}} on {{format_date post.updatedAt}}</time>
         </div>
         <section class="post-body">
             {{post.content}}
