@@ -44,8 +44,8 @@
     </main>
   </body>
   <script>
-    if(document.getElementById('logout-btn')){
-      const logoutBtn = document.getElementById('logout-btn');
+    const logoutBtn = document.getElementById('logout-btn');
+    if(logoutBtn){
       logoutBtn.addEventListener('click', async (e)=>{
           const response = await fetch('/api/user/logout',{
               method: 'POST',

@@ -7,7 +7,6 @@ router.get("/login", (req, res) => {
     res.redirect("/");
   } else {
     try {
-      // res.status(200).send("LOGIN");
       res.render("signIn");
     } catch (err) {
       res.status(400).json(err);
@@ -21,7 +20,6 @@ router.get("/signup", (req, res) => {
     res.redirect("/");
   } else {
     try {
-      // res.status(200).send("SIGN UP");
       res.render("signUp");
     } catch (err) {
       res.status(400).json(err);
@@ -67,7 +65,6 @@ router.get("/", async (req, res) => {
       ],
     });
     const PostData = dbPostData.map((post) => post.get({ plain: true }));
-    // res.status(200).json(PostData);
     res.render("home", { PostData, loggedIn: req.session.loggedIn });
   } catch (err) {
     res.status(404).json(err);
@@ -92,7 +89,6 @@ router.get("/dashboard", async (req, res) => {
       );
       const dbUserData = await User.findByPk(req.session.userId);
       const userData = dbUserData.get({ plain: true });
-      // res.status(200).json(dashboardData);
       res.render("dashboard", {
         dashboardData,
         userData,
@@ -110,7 +106,6 @@ router.get("/newpost", (req, res) => {
     res.redirect("/login");
   } else {
     try {
-      // res.status(200).json({message:'ok'})
       res.render('newPost',{loggedIn: req.session.loggedIn})
     } catch (err) {
       res.status(401).json(err);
