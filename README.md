@@ -1,15 +1,24 @@
-# Tech Blog
+# Tech-blog
 
-## User Story
-
+ 
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+## Description
 ```md
 AS A developer who writes about tech
 I WANT a CMS-style blog site
 SO THAT I can publish articles, blog posts, and my thoughts and opinions
 ```
+## Table of Contents
+- [Deployed-app](#deployed-app)
+- [Usage](#usage)
+- [License](#license)
+- [Contribute](#Contribute)
+- [Questions](#Questions)
+## Deployed-app
+https://mighty-castle-38499.herokuapp.com/
+![Deployed application](img/home-page.PNG)
 
 ## Usage
-
 ```md
 GIVEN a CMS-style blog site
 WHEN I visit the site for the first time
@@ -45,3 +54,23 @@ THEN I am signed out of the site
 WHEN I am idle on the site for more than a set time
 THEN I am able to view comments but I am prompted to log in again before I can add, update, or delete comments
 ```
+## License
+© Licensed under the Apache License 2.0
+## Contribute
+Please refer to each project's style and contribution guidelines for submitting patches and additions. In general, we follow the "fork-and-pull" Git workflow.
+
+1. Fork the repo on GitHub
+2. Clone the project to your own machine
+3. Commit changes to your own branch
+4. Push your work back up to your fork
+5. Submit a Pull request so that we can review your changes
+
+NOTE: Be sure to merge the latest from "upstream" before making a pull request!
+
+## Questions
+Contact me:
+
+- GitHub: [stamm2911](https://github.com/stamm2911)
+
+- Email: edstamm29@gmail.com
+    
