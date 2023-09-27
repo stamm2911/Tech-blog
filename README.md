@@ -9,12 +9,13 @@ I WANT a CMS-style blog site
 SO THAT I can publish articles, blog posts, and my thoughts and opinions
 ```
 ## Table of Contents
-- [Deployed-app](#deployed-app)
+- [Deployed app](#deployed-app)
 - [Usage](#usage)
 - [License](#license)
 - [Contribute](#Contribute)
 - [Questions](#Questions)
-## Deployed-app
+  
+## Deployed app
 https://mighty-castle-38499.herokuapp.com/
 ![Deployed application](img/home-page.PNG)
 
